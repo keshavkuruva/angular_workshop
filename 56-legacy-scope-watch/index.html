@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="app1">
+<head>
+  <meta charset="utf-8">
+  <title>Kyle's example</title>
+	<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <p>(no obvious relevant doc page)</p>
+
+  <div ng-controller="TopCtrl as tc" class="container">
+
+    <input ng-model="tc.a"><input ng-model="tc.b">
+    {{ tc.total }}
+
+    <h1>{{tc.title()}}</h1>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

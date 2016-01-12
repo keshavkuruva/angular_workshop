@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Directive Demo App</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <div class="container-fluid">
+    <p><a href="https://docs.angularjs.org/guide/directive">Directive Guide</a></p>
+
+    <h3>Recommended:</h3>
+    <!-- Declared in code as: .directive("cardBlock" -->
+    <card-block></card-block>
+
+    <div class="clearfix"></div>
+    <h3>Other ways to write this:</h3>
+    <card:block></card:block>
+    <card_block></card_block>
+    <div card-block></div>
+    <div card:block></div>
+    <div data-card-block></div>
+    <div x-card-block></div>
+    <div class="card-block"></div>
+
+    <!-- what does this mean?
+    <card-block />
+    -->
+
+    <div class="clearfix"></div>
+    <h3>These don't work:</h3>
+
+    <cardBlock></cardBlock>
+    <div cardBlock></div>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

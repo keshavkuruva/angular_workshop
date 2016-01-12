@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="app1">
+<head>
+  <meta charset="utf-8">
+  <title>Bindings Performance</title>
+	<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <p>(no obvious relevant doc page)</p>
+
+  <div class="container" ng-controller="MyController as mc">
+    <input ng-model="mc.address">
+    <br>
+    {{mc.address}}
+
+    <hr>
+    <input type="checkbox" ng-model="mc.ngIf"> ngIf (produce DOM)
+    <br>
+    <input type="checkbox" ng-model="mc.ngShow"> ngShow (render to screen)
+
+    <div ng-if="mc.ngIf" ng-show="mc.ngShow">
+      <!-- Try :: -->
+      <span ng-repeat="x in mc.boxes">
+        <span ng-bind="mc.address"></span>
+      </span>
+    </div>
+
+    <hr>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

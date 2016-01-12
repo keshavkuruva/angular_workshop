@@ -1,0 +1,9 @@
+body {
+  padding-top: 20px;
+}
+
+.outline {
+  border: 3px dotted green;
+  margin: 10px;
+  padding: 10px;
+}

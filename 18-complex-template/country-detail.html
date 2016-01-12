@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <div class="row">
+        <img ng-src="../demo-data/flags/{{cd.country.code}}.png" class="flag">
+
+        <h1>{{cd.country.name}}</h1>
+
+        <p>Capital: {{cd.country.capital}}</p>
+        <p>Largest City: {{cd.country.largest_city}}</p>
+        <p>Area (sq.mi.): {{cd.country.area_sq_mi}}</p>
+        <p>GDP (total): {{cd.country.gdp.total}}</p>
+        <p>GDP (per capita): {{cd.country.gdp.per_capita}}</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button ng-click="cd.showEthnicGroups = !cd.showEthnicGroups">Show / Hide Ethnic Groups</button>
+          <table ng-show="cd.showEthnicGroups">
+            <tr ng-repeat="g in cd.country.ethnic_groups">
+              <td>{{g.ethnicity}}</td>
+              <td ng-class="{highlight: g.pct > 10}">{{g.pct}}%</td>
+            </tr>
+          </table>
+          <p ng-hide="cd.showEthnicGroups">(Ethnic groups hidden)</p>
+        </div>
+        <div class="col-md-4">
+          <button ng-click="cd.toggleGovt()">Add / Remove Gov't Officials from DOM</button>
+          <dl ng-if="cd.showGovt">
+            <dt ng-repeat-start="o in cd.country.government_officials">{{o.title}}</dt>
+            <dd ng-repeat-end>{{o.name}}</dd>
+          </dl>
+          <p ng-if="!cd.showGovt">(Government Officials removed)</p>
+        </div>
+        <div class="col-md-4">
+          <select ng-model="cd.otherInfo">
+            <option value=""></option>
+            <option value="docs">Important Documents</option>
+            <option value="currency">Currency</option>
+          </select>
+          <div ng-switch on="cd.otherInfo">
+            <ul ng-switch-when="docs">
+              <li ng-repeat="d in cd.country.documents">{{d.name}}: {{d.date}}</li>
+            </ul>
+            <p ng-switch-when="currency">{{cd.country.currency.description}} ({{cd.country.currency.code}})</p>
+            <p ng-switch-default>(No info selected)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

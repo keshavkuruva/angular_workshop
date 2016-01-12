@@ -1,0 +1,13 @@
+<form name="cva.form" novalidate>
+  <h2>Zip Code Westerliness Check</h2>
+  <p>Examples: NYC 10007, San Diego 92121<p>
+  <div>
+    ZIP Code:
+    <input type="text" ng-model="cva.zip" name="zip" western-zip>
+    <b ng-show="cva.form.zip.$pending.westernZip">Checking if ZIP code is western...</b>
+    <b ng-show="cva.form.zip.$error.westernZip">ZIP code is not west enough.</b>
+  </div>
+  <div>
+    <p>Model value: {{cva.zip}}</p>
+  </div>
+</form>

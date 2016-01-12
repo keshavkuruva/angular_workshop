@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>ngModelOptions</title>
+</head>
+<body ng-controller="AppController as ac">
+  <div>
+    Debounced Input:
+    <input type="text" ng-model="ac.debouncedModel" ng-model-options="{debounce: 1000}">
+  </div>
+  <div>
+    Debounced Model:
+    <span ng-bind="ac.debouncedModel"></span>
+  </div>
+  <hr>
+  <div>
+    Update on Blur Input:
+    <input type="text" ng-model="ac.onBlurModel" ng-model-options="{updateOn: 'blur'}">
+  </div>
+  <div>
+    Update on Blur Model:
+    <span ng-bind="ac.onBlurModel"></span>
+  </div>
+  <hr>
+  <div>
+    Update on Mouseover Input:
+    <input type="text" ng-model="ac.onMouseoverModel" ng-model-options="{updateOn: 'mouseover'}">
+  </div>
+  <div>
+    Update on Mouseover Model:
+    <span ng-bind="ac.onMouseoverModel"></span>
+  </div>
+  <hr>
+  <div>
+    Email Default Settings Input:
+    <input type="email" ng-model="ac.defaultEmail">
+  </div>
+  <div>
+    Email Default Settings Model:
+    <span ng-bind="ac.defaultEmail"></span>
+  </div>
+  <hr>
+  <div>
+    Email Allow Invalid Input:
+    <input type="email" ng-model="ac.invalidEmail" ng-model-options="{allowInvalid: true}">
+  </div>
+  <div>
+    Email Allow Invalid Model:
+    <span ng-bind="ac.invalidEmail"></span>
+  </div>
+  <hr>
+  <div ng-controller="ModelOptionsController as moc">
+    <div>
+      Getter/Setter Input:
+      <input type="text" ng-model="moc.getterSetter" ng-model-options="{getterSetter: true}">
+    </div>
+    <div>
+      Getter/Setter Model:
+      <span ng-bind="moc.getterSetter()"></span>
+    </div>
+  </div>
+  <hr>
+  <div>
+    Arbitrarily Combine Options Input (debounced, update on mouseover):
+    <input type="email" ng-model="ac.combined"
+      ng-model-options="{allowInvalid: true, debounce: 500, updateOn: 'mouseover'}">
+  </div>
+  <div>
+    Arbitrarily Combine Options Model:
+    <span ng-bind="ac.combined"></span>
+  </div>
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

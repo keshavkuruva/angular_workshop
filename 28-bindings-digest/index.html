@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app1">
+<head>
+  <meta charset="utf-8">
+  <title>Binding Digest Example</title>
+	<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <p>(no obvious relevant doc page)</p>
+
+  <div class="container">
+    <div ng-controller="AppController as ac">
+      <h3>How does angular know about these changes?</h3>
+      <input ng-model="ac.address">
+      <button ng-click="ac.foo()">Reset Address</button>
+      <p>{{ac.address}}</p>
+      <hr>
+
+      <h3>See the console for how many times this has been calculated</h3>
+      <p>count = {{ac.count()}}</p>
+
+    </div>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

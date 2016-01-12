@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Directive Demo App</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="OuterController as oc">
+
+  <div class="container-fluid">
+    <p><a href="https://docs.angularjs.org/guide/directive">Directive Guide</a></p>
+    <h1>Capitals:</h1>
+    <p>Canada: {{oc.canada.capital}}</p>
+    <p>USA: {{oc.usa.capital}}</p>
+    <hr>
+    <capital-display capital="{{oc.canada.capital}}" country-name="Canada"></capital-display>
+    <capital-display capital="{{oc.usa.capital}}" country-name="United States"></capital-display>
+    <hr>
+    <my-country country="oc.canada"></my-country>
+    <my-country country="oc.usa"></my-country>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

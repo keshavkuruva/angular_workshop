@@ -1,0 +1,16 @@
+<form name="cve.form" novalidate>
+  <div>
+    Size (integer 0 - 100):
+    <input type="number" ng-model="cve.size" name="size"
+      min="0" max="100" must-be-even>
+    <br>
+    <b ng-show="cve.form.size.$error.even">
+      The value is not even</b>
+    <br>
+    <b ng-show="cve.form.size.$error.min || cve.form.size.$error.max">
+      The value must be in range 0 to 100</b>
+  </div>
+  <p>
+    Model value: {{cve.size}}
+  </p>
+</form>

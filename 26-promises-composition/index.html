@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="promisesModule">
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <p><a href="https://docs.angularjs.org/api/ng/service/$q">$q docs</a></p>
+
+    <div ng-controller="PromiseController as pc">
+      <p ng-repeat="a in pc.answer" ng-bind="a | json"></p>
+    </div>
+
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="promises.js"></script>
+</body>
+</html>

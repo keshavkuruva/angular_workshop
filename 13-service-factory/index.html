@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="exampleApp">
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <p><a href="https://docs.angularjs.org/guide/services">Service docs</a></p>
+
+    <div class="row">
+      <div class="col-md-8 col-push-md-2">
+        <div ng-controller="CountryController as cc">
+          <h1>Countries</h1>
+          <div ng-repeat="country in cc.list">
+            <span>{{country}}</span>
+          </div>
+        </div>
+        <hr>
+        <div ng-controller="AController as ac">
+          <h1>Greetings</h1>
+          <p>Greeting: {{ac.greeting1}}</p>
+          <p>Greeting: {{ac.greeting2}}</p>
+          <p>Greeting: {{ac.greeting3}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="apiExamples.js"></script>
+  <script src="countries.js"></script>
+</body>
+</html>

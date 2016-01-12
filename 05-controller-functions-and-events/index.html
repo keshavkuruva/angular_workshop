@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="app1">
+<head>
+  <meta charset="utf-8">
+  <title>ng-click Examples</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <p><a href="https://docs.angularjs.org/api/ng/directive/ngClick">Click docs</a></p>
+
+  <div ng-controller="IncrementerController as ic">
+    Count: {{ic.count}}
+    <button ng-click="ic.increment()">Increment!</button>
+    <hr>
+    The text is: {{ic.text}}
+    <input ng-model="ic.inputText"></input>
+    <button ng-click="ic.setText(ic.inputText)">Set Text</button>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

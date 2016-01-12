@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="someApp">
+<head>
+  <meta charset="utf-8">
+  <title>Templating with a Controller</title>
+  <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+    <p><a href="https://docs.angularjs.org/guide/databinding">Data binding docs</a></p>
+
+    <div ng-controller="SomeController as sc">
+      <h1>Name, 3 ways</h1>
+      <p>Name: {{sc.name}}</p>
+      <p>Name: <span class="data">{{sc.name}}</span></p>
+      <p>Name: <span ng-bind="sc.name">example text</span></p>
+    </div>
+
+    <div ng-controller="AnotherController as ac">
+      <h1>Company: {{ac.company}}</h1>
+      <p>sc.name: {{sc.name}}</p>
+      <input ng-model="ac.company">
+    </div>
+  </div>
+
+  <script src="../lib/angular/angular.js"></script>
+  <script>
+    // Intentionally not in a separate file or IIFE.
+    // IIFE will be added and explained in an uncoming step.
+    var x = angular.module('someApp', []);
+
+    // Note the function is named twice.
+    x.controller('SomeController', function SomeController() {
+      this.name = "Jim";
+    });
+
+    function AnotherController() {
+      this.company = "ABC";
+    }
+
+    x.controller("AnotherController", AnotherController);
+
+  </script>
+</body>
+</html>

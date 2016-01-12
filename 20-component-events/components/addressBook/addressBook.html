@@ -1,0 +1,6 @@
+<section>
+  <div ng-repeat="a in bc.addresses">
+    <address-entry label="{{a.heading}} Address" addr="a" duplicate="bc.addExisting(address)"></address-entry>
+  </div>
+  <button ng-click="bc.addNew()">Add Address for {{bc.purpose}}</button>
+</section>

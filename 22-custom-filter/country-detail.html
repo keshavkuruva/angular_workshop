@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <div class="row">
+        <img ng-src="../demo-data/flags/{{cd.country.code}}.png" class="flag">
+
+        <h1>{{cd.country.name}}</h1>
+
+        <p>Capital: {{cd.country.capital | reverse}}</p>
+        <p>Largest City: {{cd.country.largest_city | initials}}</p>
+        <p>Area (sq.mi.): {{cd.country.area_sq_mi | number}}</p>
+        <p>GDP (total): {{cd.country.gdp.total | trillionDollar}}</p>
+        <p>GDP (per capita): {{cd.country.gdp.per_capita | currency:$:0}}</p>
+        <p>Top-level Domains: {{cd.country.internet_tld | oxfordComma}}</p>
+      </div>
+    </div>
+  </div>
+</div>

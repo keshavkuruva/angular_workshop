@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>My Demo Application</title>
+</head>
+<body>
+  <h1>Welcome Home</h1>
+  <div ng-controller="UserController">
+    <div>First: <input ng-model="user.first_name"></div>
+    <div>Last: <input ng-model="user.last_name"></div>
+    <div>Full: {{fullName(user)}}</div>
+    <hr>
+    <h2>Full Time Employees</h2>
+    <ul ng-controller="EmployeeController">
+      <li ng-repeat="emp in empList">
+        {{fullName(emp)}} - {{emp.hours_worked}} hours
+      </li>
+    </ul>
+  </div>
+
+  <script src="../../lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script src="user.js"></script>
+  <script src="employees.js"></script>
+  <script src="utils.js"></script>
+</body>
+</html>

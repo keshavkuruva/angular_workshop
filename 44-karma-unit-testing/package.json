@@ -1,0 +1,15 @@
+{
+  "name": "unit-testing-example",
+  "version": "0.0.0",
+  "description": "Angular unit tests",
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "none",
+  "devDependencies": {
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.2"
+  }
+}
